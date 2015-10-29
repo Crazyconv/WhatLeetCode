@@ -1,10 +1,11 @@
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.ArrayList;
+import java.util.Collections
 
 public class WordLadder{
     public int shortestTransform(String start, String end, HashSet<String> dict){
-        WordNode wn = new WordNode(start, 0);
+        WordNode wn = new WordNode(start, 1);
         LinkedList<WordNode> q = new LinkedList<WordNode>();
         q.offer(wn);
 
@@ -36,11 +37,11 @@ public class WordLadder{
             }
             wn = q.poll();
         }
-        return -1;
+        return 0;
     }
 
-    public ArrayList<ArrayList<String>> allShortestTransform(String start, String end, HashSet<String> dict){
-        ArrayList<ArrayList<String>> allShortestPath = new ArrayList<ArrayList<String>>();
+    public List<List<String>> allShortestTransform(String start, String end, HashSet<String> dict){
+        List<List<String>> allShortestPath = new ArrayList<List<String>>();
         int minDist = -1;
         int preDist = 0;
         int currentDist = 0;
@@ -69,6 +70,7 @@ public class WordLadder{
                     oneShortestPath.add(wn.word);
                     wn = wn.prev;
                 }
+                Collections.reverse(oneShortestPath);
                 allShortestPath.add(oneShortestPath);
             } else {
                 if(minDist == -1){

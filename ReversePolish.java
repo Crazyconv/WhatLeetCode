@@ -5,7 +5,7 @@ public class ReversePolish{
 		Stack<Integer> s = new Stack();
 		int a, b;
 		for(String token: tokens){
-			if(token.charAt(0) >= '0' && token.charAt(0) <= '9'){
+			if(!(token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/"))){
 				s.push(Integer.valueOf(token));
 			} else {
 				b = s.pop();
