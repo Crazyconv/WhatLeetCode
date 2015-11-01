@@ -1,4 +1,8 @@
 public class BinSearch{
+    // while condition: start < end
+    // after while: check
+    // larger: mid = (end + start)/2 
+    // smaller: mid = (end + 1 + start)/2 
     public int findFirstLarger(int[] arr, int target){
         if(arr.length == 0)
             return -1;
