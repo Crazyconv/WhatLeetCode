@@ -33,9 +33,11 @@ public class RotateArray{
 	 * space: O(1)
 	 */
 	public static void reverseRotate(int[] nums, int k){
-		reverse(nums, 0, nums.length - k - 1);
-		reverse(nums, nums.length - k, nums.length - 1);
-		reverse(nums, 0, nums.length - 1);
+		if((k = k % nums.length) > 0){
+			reverse(nums, 0, nums.length - k - 1);
+			reverse(nums, nums.length - k, nums.length - 1);
+			reverse(nums, 0, nums.length - 1);
+		}
 	}
 
 	public static void reverse(int[] nums, int start, int end){
