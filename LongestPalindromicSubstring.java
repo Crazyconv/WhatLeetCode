@@ -1,7 +1,7 @@
 public class LongestPalindromicSubstring{
     public static void main(String[] argvs){
         LongestPalindromicSubstring lps = new LongestPalindromicSubstring();
-        System.out.println(lps.longestPalindromeDP("abbac"));
+        System.out.println(lps.longestPalindromeManacher("abbac"));
     }
     public String longestPalindrome(String s) {
         if(s == null || s.length() == 0)
@@ -62,4 +62,85 @@ public class LongestPalindromicSubstring{
         else
             return s.substring(start, end+1);
     }   
+    public String longestPalindromeManacher(String s){
+        // s.length() >= 1
+        // # Initialize #
+        // positions: N = 2 * s.length() + 1
+        // t[0] = 0, t[1] = 1
+        // center = 1, centerRight = 2
+        // longest = 1, longestPosition = 1
+        // # shift #
+        // for(current = 2; current < N; current ++):
+        //     mirror = 2 * center - current
+        //     diff = centerRight - current
+        //     expand = false
+        //     if diff > 0:
+        //         if(t[mirror] < diff): t[current] = t[mirror]
+        //         if(t[mirror] == diff && centerRight == N-1): t[current] = t[mirror]
+        //         if(t[mirror] == diff && centerRight < N-1): t[current] = t[mirror], expand = true
+        //         if(t[mirror] > diff): t[current] = diff, expand = true
+        //     else:
+        //         t[current] = 0, expand = true
+        //     # expand if necessary
+        //     if(expand): # if left/right is even, +1, if left/eight is odd and left = eight, +1
+        //         while(
+        //               (current-t[current] > 0 && current+t[current] < N-1) &&
+        //               (
+        //                (current-t[current]-1)%2 == 0) ||
+        //                (s[(current-t[current]-1)/2] == s[(current+t[current]+1)/2])
+        //               )
+        //              ):
+        //             t[current] ++;
+        //     # update max #
+        //     if(t[current] > longest): longest = t[current], longestPosition = current
+        //     # update center #
+        //     if(centerRight < current + t[current]): center = current, centerRight = current + t[current]
+        // # calculate palindrome
+        // s.substring((longestPosition-longest)/2, (longestPosition+longest+1)/2)
+        if(s == null || s.length() == 0)
+            return "";
+        int N = s.length() * 2 + 1;
+        int[] t = new int[N];
+        t[0] = 0; t[1] = 1;
+        int center = 1, centerRight = 2;
+        int longest = 1, longestPosition = 1;
+        for(int current = 2; current < N; current++){
+            int mirror = 2 * center - current;
+            int diff = centerRight - current;
+            boolean toExpand = false;
+            if(diff > 0){
+                if(t[mirror] < diff){
+                    t[current] = t[mirror];
+                } else if(t[mirror] == diff && centerRight == N - 1){
+                    t[current] = t[mirror];
+                } else if(t[mirror] == diff && centerRight < N - 1){
+                    t[current] = t[mirror];
+                    toExpand = true;
+                } else if(t[mirror] > diff){
+                    t[current] = diff;
+                    toExpand = true;
+                }
+            } else {
+                t[current] = 0;
+                toExpand = true;
+            }
+            if(toExpand){
+                while((current - t[current] > 0 && current + t[current] < N - 1) && 
+                      ((current-t[current]-1)%2 == 0 ||
+                       s.charAt((current-t[current]-1)/2) == s.charAt((current+t[current]+1)/2))
+                     ){
+                    t[current] ++;
+                }
+            }
+            if(t[current] > longest){
+                longest = t[current];
+                longestPosition = current;
+            }
+            if(centerRight < current + t[current]){
+                center = current;
+                centerRight = current + t[current];
+            }
+        }
+        return s.substring((longestPosition-longest)/2, (longestPosition+longest+1)/2);
+    }
 }
