@@ -73,6 +73,8 @@ public class SuffixArray{
     /**********************************************************************
      **                          Suffix Tree                             **
      **********************************************************************/
+    // O(n)
+    // see https://github.com/Crazyconv/WhatLeetCode/blob/master/template/ApplicationsOfSuffixTree/SuffixArray.java
 
     public static void main(String[] argvs){
         SuffixArray sa = new SuffixArray();

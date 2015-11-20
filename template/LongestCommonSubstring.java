@@ -30,6 +30,7 @@ public class LongestCommonSubstring{
      **                              Suffix Tree                         **
      **********************************************************************/
     // O(n+m)
+    // see https://github.com/Crazyconv/WhatLeetCode/blob/master/template/ApplicationsOfSuffixTree/LongestCommonSubstring.java
     
     public static void main(String[] argvs){
         LongestCommonSubstring lcs = new LongestCommonSubstring();

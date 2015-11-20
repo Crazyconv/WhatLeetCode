@@ -1,3 +1,7 @@
+/*
+ * http://www.geeksforgeeks.org/trie-insert-and-search/
+ * http://www.geeksforgeeks.org/trie-delete/
+ */
 public class Trie{
     int count;
     Node root;

@@ -23,6 +23,7 @@ public class LongestRepeatedSubString{
      **                         Suffix Tree                              **
      **********************************************************************/
     // O(n)
+    // see https://github.com/Crazyconv/WhatLeetCode/blob/master/template/ApplicationsOfSuffixTree/LongestRepeatedSubString.java
 
     public static void main(String[] argvs){
         LongestRepeatedSubString lrs = new LongestRepeatedSubString();
