@@ -1,3 +1,6 @@
+/*
+ * http://www.geeksforgeeks.org/suffix-tree-application-2-searching-all-patterns/
+ */
 public class SearchPattern{
     SuffixTree st;
     public SearchPattern(String s){
@@ -35,9 +38,9 @@ public class SearchPattern{
             return -1;
         if(node.start != -1){
             int res = checkEdge(node, s, pos);
-            if(res == -1)
+            if(res == -1) // do not match
                 return res;
-            else if (res == 1){
+            else if (res == 1){ // match, print all suffix index
                 System.out.println("substring count: " + String.valueOf(leafCount(node)));
                 return res;
             }

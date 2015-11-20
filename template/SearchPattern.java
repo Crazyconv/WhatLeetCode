@@ -172,7 +172,7 @@ public class SearchPattern{
     /**********************************************************************
      **                            Suffix Tree                           **
      **********************************************************************/
-    // see SuffixTree.java
+    // see https://github.com/Crazyconv/WhatLeetCode/blob/master/template/ApplicationsOfSuffixTree/SearchPattern.java
 
     public static void main(String[] args){
         SearchPattern sp = new SearchPattern();
