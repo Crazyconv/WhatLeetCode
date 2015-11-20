@@ -123,21 +123,15 @@ public class SuffixTree{
     private void setSuffixIndex(Node node, int height){
         if(node == null)
             return;
-        if(node != root){
-            System.out.print(s.substring(node.start, node.end.value + 1));
-        }
         boolean isLeaf = true;
         for(int i = 0; i < 256; i++){
             if(node.children[i] != null){
-                if(isLeaf && node != root)
-                    System.out.printf(" [%d]\n", node.suffixIndex);
                 isLeaf = false;
                 setSuffixIndex(node.children[i], height + node.children[i].getLength());
             }
         }
         if(isLeaf){
             node.suffixIndex = s.length() - height;
-            System.out.printf(" [%d]\n", node.suffixIndex);
         }
     }
     public static void main(String[] agrvs){
