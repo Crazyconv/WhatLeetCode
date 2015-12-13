@@ -16,7 +16,7 @@
 //    LongestSubstringContaining2UniqueCharacters
 //    SubstringwithConcatenationofAllWords
 // 有的需要范围：
-//    SubstringwithConcatenationofAllWords
+//    MinimumWindowSubstring
 public class LongestSubstringWithoutRepeatingCharacters{
     public int lengthOfLongestSubstring(String s) {
         int i = 0, j = 0, maxLen = 0;
