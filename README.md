@@ -30,3 +30,8 @@ hmm...
     * find the middle element without using extra space
     * reverse list without using extra space
     * merge two lists without using extra space
+* LinkedListCycle & LinkedListCycleII
+    * detect a loop in a linked list
+    * find the start of the loop in a linked list
+* RemoveDuplicatesfromSortedListII
+    * use of "pointer"
