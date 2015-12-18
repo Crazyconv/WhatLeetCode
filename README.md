@@ -36,3 +36,11 @@ hmm...
 * RemoveDuplicatesfromSortedListII
     * use of "pointer"
 * LRUCache
+* ReverseLinkedList
+    * iterative and recursive
+* RemoveNthNodeFromEndOfList
+    * fast and slow pointer
+* PalindromeLinkedList
+    * O(1) space
+* ArrayQueue
+    * implement Queue using Array

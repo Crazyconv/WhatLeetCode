@@ -20,6 +20,7 @@ public class RemoveLinkedListElements{
                 cur = cur.next;
             }
         }
+        return head;
     }    
 }
 
