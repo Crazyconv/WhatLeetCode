@@ -14,7 +14,6 @@ hmm...
 * SubstringwithConcatenationofAllWords
 * MinimumWindowSubstring
 * WordLadder
-
 * Atoi
 
 ## Array
@@ -26,6 +25,7 @@ hmm...
 * ContainsDuplicateIII
 
 ## LinkedList
+
 * ReorderList
     * find the middle element without using extra space
     * reverse list without using extra space
@@ -46,6 +46,15 @@ hmm...
     * implement Queue using Array
 
 ## Matrix
+
 * SearchTwoDMatrixII
 * SurroundedRegions
     * Flood Fill
+* LargestRectangleInHistogram
+    * JUST SOME TRICK
+* MaximalRectangle
+* WordSearchII
+    * DFS + backtracking
+    * Prefix Tree (remove redundant check)
+
+## Tree & Heap
