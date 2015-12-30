@@ -1,15 +1,22 @@
 public class BinaryTreefromPreIn{
-    public TreeNode sortedArrayToBST(int[] nums) {
-        return sortedArrayToBST(nums, 0, nums.length - 1);
+    public TreeNode buildTree(int[] preorder, int[] inorder){
+        return buildTree(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
     }
-    public TreeNode sortedArrayToBST(int[] nums, int start, int end){
-        if(end - start < 0)
+    public TreeNode buildTree(int[] preorder, int startP, int endP, int[] inorder, int startI, int endI){
+        if(endP - startP < 0)
             return null;
-        int mid = start + (end - start)/2;
-        TreeNode t = new TreeNode(nums[mid]);
-        t.left = sortedArrayToBST(nums, start, mid - 1);
-        t.right = sortedArrayToBST(nums, mid+1, end);
+        TreeNode t = new TreeNode(preorder[startP]);
+        int mid = search(inorder, startI, endI, preorder[startP]);
+        t.left = buildTree(preorder, startP + 1, mid - startI + startP, inorder, startI, mid - 1);
+        t.right = buildTree(preorder, endP - endI + mid + 1, endP, inorder, mid + 1, endI);
         return t;
+    }
+    public int search(int[] inorder, int start, int end, int target){
+        for(int i = start; i <= end; i++){
+            if(inorder[i] == target)
+                return i;
+        }
+        return 0;
     }
 }
 

@@ -58,3 +58,17 @@ hmm...
     * Prefix Tree (remove redundant check)
 
 ## Tree & Heap
+* BinaryTreePreorderTraversal
+    * pre-order (iterative)
+* BinaryTreeInorderTraversal
+    * in-order (iterative)
+* BinaryTreePostorderTraversal
+    * post-order (iterative)
+* BinaryTreeLevelOrderTraversal
+    * use cur/pre
+* ValidateBinarySearchTree
+* FlattenBinaryTreetoLinkedList
+* BinaryTreefromPreIn
+* SortedListtoBST
+* BinaryTreeMaximumPathSum
+* BSTIterator
