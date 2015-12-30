@@ -23,6 +23,10 @@ hmm...
 * minSubArrayLen
 * LongestConsecutiveSequence
 * ContainsDuplicateIII
+* MergeKSortedArray
+    * heap: PriorityQueue
+* MergeKSortedList
+    * divide and conquer
 
 ## LinkedList
 
@@ -72,3 +76,5 @@ hmm...
 * SortedListtoBST
 * BinaryTreeMaximumPathSum
 * BSTIterator
+* UniqueBinarySearchTreesII
+* LowestCommonAncestorBT
