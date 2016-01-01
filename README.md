@@ -27,6 +27,13 @@ hmm...
     * heap: PriorityQueue
 * MergeKSortedList
     * divide and conquer
+* MaximumGap
+    * bucket sort
+* FirstMissingPositive
+    * bucket sort
+* SortColors
+    * Two pass using count sort
+    * One pass using two pointers
 
 ## LinkedList
 
@@ -34,6 +41,10 @@ hmm...
     * find the middle element without using extra space
     * reverse list without using extra space
     * merge two lists without using extra space
+* SortList
+    * merge sort linkedlist
+* InsertionSortList
+    * insertion sort linkedlist
 * LinkedListCycle & LinkedListCycleII
     * detect a loop in a linked list
     * find the start of the loop in a linked list
@@ -62,6 +73,7 @@ hmm...
     * Prefix Tree (remove redundant check)
 
 ## Tree & Heap
+
 * BinaryTreePreorderTraversal
     * pre-order (iterative)
 * BinaryTreeInorderTraversal
@@ -80,5 +92,22 @@ hmm...
 * LowestCommonAncestorBT
 
 ## Graph
+
 * CourseScheduleII
     * Topological sort
+
+## Bit Manipulation (mostly some optimization tricks)
+
+* SingleNumber
+    * XOR
+* SingleNumberII
+    * trick
+* SingleNumberIII
+    * Two Pass
+* NumberOfOneBits
+    * Trick
+* ReverseBits
+    * Optimization
+* RepeatedDNASequences
+    * Optimization
+* PowerOfTwo
