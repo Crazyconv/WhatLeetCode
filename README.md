@@ -111,3 +111,9 @@ hmm...
 * RepeatedDNASequences
     * Optimization
 * PowerOfTwo
+
+## Combinations and Permutations
+
+* Permutations
+    * iterative (insertion)
+    * recursive
