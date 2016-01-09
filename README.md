@@ -117,3 +117,8 @@ hmm...
 * Permutations
     * iterative (insertion)
     * recursive
+
+## Math
+
+* PowerOfThree
+    * tricks
