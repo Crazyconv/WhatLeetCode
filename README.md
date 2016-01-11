@@ -127,3 +127,5 @@ hmm...
     * find primes up to n
 * DivideTwoIntegers
     * shift operator
+* MaxPointsLine
+    * precision (zero)
