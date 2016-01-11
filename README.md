@@ -123,3 +123,7 @@ hmm...
 * PowerOfThree
     * tricks
 * FactorialTrailingZeroes
+* CountPrimes
+    * find primes up to n
+* DivideTwoIntegers
+    * shift operator
