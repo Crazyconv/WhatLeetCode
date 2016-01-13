@@ -35,13 +35,6 @@ hmm...
     * Two pass using count sort
     * One pass using two pointers
 
-## Dynamic Programming
-
-* BestTimetoBuyandSellStockI
-* BestTimetoBuyandSellStockII
-* BestTimetoBuyandSellStockIII
-* BestTimetoBuyandSellStockIV
-
 ## LinkedList
 
 * ReorderList
@@ -136,3 +129,13 @@ hmm...
     * shift operator
 * MaxPointsLine
     * precision (zero)
+
+## Dynamic Programming
+
+* BestTimetoBuyandSellStockI
+* BestTimetoBuyandSellStockII
+* BestTimetoBuyandSellStockIII
+* BestTimetoBuyandSellStockIV
+* BestTimetoBuyandSellStockWithCooldown
+* JumpGame
+* JumpGameII

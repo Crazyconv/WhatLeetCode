@@ -8,7 +8,7 @@ public class BestTimetoBuyandSellStockIV{
         int maxP = 0;
         if(k > 0 && prices != null && prices.length > 1){
             // if k > n/2, can do maximum transaction
-            if(k > n/2){
+            if(k > prices.length/2){
                 for(int i = 1; i < prices.length; i ++){
                     int diff = prices[i] - prices[i - 1];
                     if(diff > 0)
