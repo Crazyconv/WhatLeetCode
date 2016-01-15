@@ -20,6 +20,7 @@ hmm...
 
 * MedianTwoArrays
 * KthLargestElement
+    * several approaches
 * minSubArrayLen
 * LongestConsecutiveSequence
 * ContainsDuplicateIII
@@ -34,6 +35,16 @@ hmm...
 * SortColors
     * Two pass using count sort
     * One pass using two pointers
+* ContainerWithMostWater
+    * two pointers
+    * stack
+* TrappingRainWater
+    * dp: more than one attribute
+    * two pointers
+* WiggleSort
+* WiggleSortII
+    * find median using O(n) time and O(1) space
+    * virtual indexing
 
 ## LinkedList
 
@@ -129,6 +140,9 @@ hmm...
     * shift operator
 * MaxPointsLine
     * precision (zero)
+* IntegertoRoman
+* RomantoInteger
+
 
 ## Dynamic Programming
 
@@ -139,3 +153,9 @@ hmm...
 * BestTimetoBuyandSellStockWithCooldown
 * JumpGame
 * JumpGameII
+* PalindromePartitioning
+* PalindromePartitioningII
+* WordBreak
+* WordBreakII
+    * dp
+    * jianzhi
