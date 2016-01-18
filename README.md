@@ -45,6 +45,12 @@ hmm...
 * WiggleSortII
     * find median using O(n) time and O(1) space
     * virtual indexing
+* CountofSmallerNumbersAfterSelf
+* CountOfRangeSum
+    * divide and conquer
+    * binary search tree
+    * binary index tree
+    * two pointer
 
 ## LinkedList
 
