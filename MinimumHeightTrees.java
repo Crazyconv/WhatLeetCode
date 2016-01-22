@@ -96,16 +96,19 @@ public class MinimumHeightTrees{
 
     // https://leetcode.com/discuss/72739/two-o-n-solutions
     // nice dp... 
+    // stack overflow
+    // 36 ms
     int[] height1, height2, dp;
-    ArrayList<ArrayList<Integer>> neis;
+    List<Integer>[] neis;
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
-        neis = new ArrayList<ArrayList<Integer>>();
-        for(int i = 0; i < n; i++){
-            neis.add(new ArrayList<Integer>());
+        neis = new List[n];
+        for(int i = 0; i < n; i ++){
+            neis[i] = new List<Integer>();
         }
+
         for(int i = 0; i < edges.length; i++){
-            neis.get(edges[i][0]).add(edges[i][1]);
-            neis.get(edges[i][1]).add(edges[i][0]);
+            neis[edges[i][0]].add(edges[i][1]);
+            neis[edges[i][1]].add(edges[i][0]);
         }
 
         height1 = new int[n];
@@ -114,8 +117,9 @@ public class MinimumHeightTrees{
         dfs(0, -1);
         dfs(0, -1, 0);
 
+        int min = Integer.MAX_VALUE;
         for(int i = 0; i < n; i++){
-            min = Math.min(dp[i]);
+            min = Math.min(dp[i], min);
         }
 
         ArrayList<Integer> result = new ArrayList<Integer>();
@@ -128,7 +132,7 @@ public class MinimumHeightTrees{
 
     public void dfs(int root, int parent){
         height1[root] = height2[root] = -1;
-        for(int u : neis.get(root)){
+        for(int u : neis[root]){
             if(u != parent){
                 dfs(u, root);
                 if(height1[u] + 1 > height1[root]){
@@ -140,5 +144,15 @@ public class MinimumHeightTrees{
             }
         }
         height1[root] = (height1[root] < 0)? 0 : height1[root];
+    }
+
+    public void dfs(int root, int parent, int acc){
+        dp[root] = Math.max(height1[root], acc);
+        for(int u : neis[root]){
+            if(u != parent){
+                int childAcc = Math.max(acc + 1, (height1[u] + 1 == height1[root])? height2[root] + 1 : height1[root] + 1);
+                dfs(u, root, childAcc);
+            }
+        }
     }
 }
