@@ -15,6 +15,12 @@ hmm...
 * MinimumWindowSubstring
 * WordLadder
 * Atoi
+* GroupAnagrams
+    * hash table
+    * count sort
+* Remove Duplicate Letters
+    * Greedy
+    * Stack
 
 ## Array
 
@@ -51,6 +57,9 @@ hmm...
     * binary search tree
     * binary index tree
     * two pointer
+* CoinChange
+    * DFS with prune
+    * DP
 
 ## LinkedList
 
@@ -99,6 +108,7 @@ hmm...
     * post-order (iterative)
 * BinaryTreeLevelOrderTraversal
     * use cur/pre
+* BinaryTreeVerticalOrderTraversal
 * ValidateBinarySearchTree
 * FlattenBinaryTreetoLinkedList
 * BinaryTreefromPreIn
@@ -107,6 +117,8 @@ hmm...
 * BSTIterator
 * UniqueBinarySearchTreesII
 * LowestCommonAncestorBT
+* MinimumHeightTrees
+    * Tree property
 
 ## Graph
 
@@ -128,6 +140,8 @@ hmm...
 * RepeatedDNASequences
     * Optimization
 * PowerOfTwo
+* GeneralizedAbbreviation
+    * 2^n
 
 ## Combinations and Permutations
 
@@ -148,6 +162,11 @@ hmm...
     * precision (zero)
 * IntegertoRoman
 * RomantoInteger
+* BulbSwitcher
+    * magic
+* UglyNumberII
+    * generation..
+* SuperUglyNumber
 
 
 ## Dynamic Programming
@@ -165,3 +184,20 @@ hmm...
 * WordBreakII
     * dp
     * jianzhi
+* BurstBalloons
+    * reverse thinking
+* MinimumHeightTrees
+
+## Binary Search
+
+* SmallestRectangleEnclosingBlackPixels
+
+## BFS/DFS
+
+* RemoveInvalidParentheses
+* AdditiveNumber
+
+## Segment Tree/Binary Index Tree
+
+* RangeSumQuery
+* RangeSumQuery2D
