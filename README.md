@@ -60,6 +60,9 @@ hmm...
 * CoinChange
     * DFS with prune
     * DP
+* BestMeetingPoint
+    * bucket sort
+    * two pointers
 
 ## LinkedList
 
@@ -119,6 +122,7 @@ hmm...
 * LowestCommonAncestorBT
 * MinimumHeightTrees
     * Tree property
+* SerializeAndDeserializeBinaryTree
 
 ## Graph
 
