@@ -63,6 +63,9 @@ hmm...
 * BestMeetingPoint
     * bucket sort
     * two pointers
+* FindMedianFromDataStream
+    * Binary Search Tree
+    * Heap
 
 ## LinkedList
 
@@ -171,6 +174,7 @@ hmm...
 * UglyNumberII
     * generation..
 * SuperUglyNumber
+* NimGame
 
 
 ## Dynamic Programming
