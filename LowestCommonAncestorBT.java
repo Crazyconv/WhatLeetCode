@@ -1,3 +1,4 @@
+// http://articles.leetcode.com/lowest-common-ancestor-of-a-binary-tree-part-i/
 public class LowestCommonAncestorBT{
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         return LCA(root, p, q).node;
@@ -19,6 +20,18 @@ public class LowestCommonAncestorBT{
 
         return new CountTree(root, leftCount + rightCount + count);
     }  
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null)
+            return null;
+        if(root == p || root == q)
+            return root;
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        if(left != null && right != null)
+            return root;
+        else
+            return (left == null)? right : left;
+    }    
 }
 
 class CountTree{

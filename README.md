@@ -32,8 +32,6 @@ hmm...
 * ContainsDuplicateIII
 * MergeKSortedArray
     * heap: PriorityQueue
-* MergeKSortedList
-    * divide and conquer
 * MaximumGap
     * bucket sort
 * FirstMissingPositive
@@ -91,6 +89,9 @@ hmm...
     * O(1) space
 * ArrayQueue
     * implement Queue using Array
+* MergeKSortedList
+    * divide and conquer
+* MinStack
 
 ## Matrix
 
@@ -126,6 +127,13 @@ hmm...
 * MinimumHeightTrees
     * Tree property
 * SerializeAndDeserializeBinaryTree
+* RecoverBinarySearchTree
+    * inorder BST is sorted
+* BinaryTreeZigzagLevelOrderTraversal
+* BinaryTreePaths
+* VerifyPreorderSequenceinBinarySearchTree
+* BSTFromPreorder
+* BinaryTreeUpsideDown
 
 ## Graph
 
@@ -175,6 +183,7 @@ hmm...
     * generation..
 * SuperUglyNumber
 * NimGame
+* PascalsTriangleII
 
 
 ## Dynamic Programming

@@ -8,7 +8,7 @@ public class BinaryTreeVerticalOrderTraversal{
             LinkedList<Integer> mq = new LinkedList<Integer>();
             tq.offer(root);
             mp.offer(0);
-            while(!q.isEmpty()){
+            while(!tq.isEmpty()){
                 TreeNode node = tq.remove();
                 int mark = mq.remove();
                 ArrayList<Integer> arr = m.get(mark);
