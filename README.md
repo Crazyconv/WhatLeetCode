@@ -134,6 +134,10 @@ hmm...
 * VerifyPreorderSequenceinBinarySearchTree
 * BSTFromPreorder
 * BinaryTreeUpsideDown
+* LargestBSTSubtree
+* VerifyPreorderSerializationofaBinaryTree
+* GraphValidTree
+* CountUnivalueSubtrees
 
 ## Graph
 
