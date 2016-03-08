@@ -64,6 +64,10 @@ hmm...
 * FindMedianFromDataStream
     * Binary Search Tree
     * Heap
+* NextPermutation
+* SearchInRotatedSortedArray
+    * binary search
+* SearchInRotatedSortedArray
 
 ## LinkedList
 
