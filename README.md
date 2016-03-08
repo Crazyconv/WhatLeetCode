@@ -68,6 +68,7 @@ hmm...
 * SearchInRotatedSortedArray
     * binary search
 * SearchInRotatedSortedArray
+* SearchForARange
 
 ## LinkedList
 
