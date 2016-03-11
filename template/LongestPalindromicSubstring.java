@@ -156,7 +156,7 @@ public class LongestPalindromicSubstring{
     }
 
     /**********************************************************************
-     **                   Manacher's Algorithm                           **
+     **                           Suffix tree                            **
      **********************************************************************/
     // O(n)
     // see https://github.com/Crazyconv/WhatLeetCode/blob/master/template/ApplicationsOfSuffixTree/LongestPalindromicSubstring.java
