@@ -21,6 +21,9 @@ hmm...
 * Remove Duplicate Letters
     * Greedy
     * Stack
+* ShortestPalindrome
+* InterleavingString
+    * BFS
 
 ## Array
 
@@ -67,8 +70,10 @@ hmm...
 * NextPermutation
 * SearchInRotatedSortedArray
     * binary search
-* SearchInRotatedSortedArray
+* SearchInRotatedSortedArrayII
 * SearchForARange
+* Candy
+    * two array
 
 ## LinkedList
 
@@ -109,6 +114,7 @@ hmm...
 * WordSearchII
     * DFS + backtracking
     * Prefix Tree (remove redundant check)
+* Sudoku Solver
 
 ## Tree & Heap
 
@@ -166,6 +172,7 @@ hmm...
 * PowerOfTwo
 * GeneralizedAbbreviation
     * 2^n
+* GrayCode
 
 ## Combinations and Permutations
 
@@ -213,6 +220,7 @@ hmm...
 * BurstBalloons
     * reverse thinking
 * MinimumHeightTrees
+* ScrambleString
 
 ## Binary Search
 
