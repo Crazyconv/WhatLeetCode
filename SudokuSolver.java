@@ -6,29 +6,81 @@
 
 import java.util.*;
 public class SudokuSolver{
+    // public void solveSudoku(char[][] board) {
+    //     ArrayList<HashSet<Character>> h = new ArrayList<HashSet<Character>>(9);
+    //     ArrayList<HashSet<Character>> v = new ArrayList<HashSet<Character>>(9);
+    //     ArrayList<HashSet<Character>> s = new ArrayList<HashSet<Character>>(9);
+    //     for(int i = 0; i < 9; i ++){
+    //         h.add(new HashSet<Character>());
+    //         v.add(new HashSet<Character>());
+    //         s.add(new HashSet<Character>());
+    //     }
+    //     for(int i = 0; i < 9; i ++){
+    //         for(int j = 0; j < 9; j++){
+    //             if(board[i][j] != '.'){
+    //                 h.get(i).add(board[i][j]);
+    //                 v.get(j).add(board[i][j]);
+    //                 s.get((i/3)*3+j/3).add(board[i][j]);
+    //             }
+    //         }
+    //     }
+    //     solve(board, 0, 0, h, v, s);
+    // }    
+
+    // public boolean solve(char[][] board, int i, int j, ArrayList<HashSet<Character>> h,
+    //     ArrayList<HashSet<Character>> v, ArrayList<HashSet<Character>> s){
+
+    //     if(i == 9)
+    //         return true;
+
+    //     int nextI = (j == 8)? (i + 1): i;
+    //     int nextJ = (j + 1) % 9;
+    //     if(board[i][j] != '.')
+    //         return solve(board, nextI, nextJ, h, v, s);
+    //     else{
+    //         int sIndex = (i / 3) * 3 + j / 3;
+    //         for(char num = '1'; num <= '9'; num++){
+    //             if(!h.get(i).contains(num) && !v.get(j).contains(num) && !s.get(sIndex).contains(num)){
+    //                 h.get(i).add(num);
+    //                 v.get(j).add(num);
+    //                 s.get(sIndex).add(num);
+    //                 board[i][j] = num;
+    //                 System.out.printf("%d %d %c\n", i, j, num);
+    //                 if(solve(board, nextI, nextJ, h, v, s))
+    //                     return true;
+    //                 h.get(i).remove(num);
+    //                 v.get(j).remove(num);
+    //                 s.get(sIndex).remove(num);
+    //             }
+    //         }
+    //         board[i][j] = '.';
+    //         return false;
+    //     }
+    // }
     public void solveSudoku(char[][] board) {
-        ArrayList<HashSet<Character>> h = new ArrayList<HashSet<Character>>(9);
-        ArrayList<HashSet<Character>> v = new ArrayList<HashSet<Character>>(9);
-        ArrayList<HashSet<Character>> s = new ArrayList<HashSet<Character>>(9);
+        int[] h = new int[9];
+        int[] v = new int[9];
+        int[] s = new int[9];
+
         for(int i = 0; i < 9; i ++){
-            h.add(new HashSet<Character>());
-            v.add(new HashSet<Character>());
-            s.add(new HashSet<Character>());
+            h[i] = (1 << 10) - 2;
+            v[i] = (1 << 10) - 2;
+            s[i] = (1 << 10) - 2;
         }
         for(int i = 0; i < 9; i ++){
             for(int j = 0; j < 9; j++){
                 if(board[i][j] != '.'){
-                    h.get(i).add(board[i][j]);
-                    v.get(j).add(board[i][j]);
-                    s.get((i/3)*3+j/3).add(board[i][j]);
+                    int num = 1 << ((int) (board[i][j] - '0'));
+                    h[i] ^= num;
+                    v[j] ^= num;
+                    s[(i/3)*3+j/3] ^= num;
                 }
             }
         }
         solve(board, 0, 0, h, v, s);
     }    
 
-    public boolean solve(char[][] board, int i, int j, ArrayList<HashSet<Character>> h,
-        ArrayList<HashSet<Character>> v, ArrayList<HashSet<Character>> s){
+    public boolean solve(char[][] board, int i, int j, int[] h, int[] v, int[] s){
 
         if(i == 9)
             return true;
@@ -39,21 +91,26 @@ public class SudokuSolver{
             return solve(board, nextI, nextJ, h, v, s);
         else{
             int sIndex = (i / 3) * 3 + j / 3;
-            for(char num = '1'; num <= '9'; num++){
-                if(!h.get(i).contains(num) && !v.get(j).contains(num) && !s.get(sIndex).contains(num)){
-                    h.get(i).add(num);
-                    v.get(j).add(num);
-                    s.get(sIndex).add(num);
-                    board[i][j] = num;
-                    System.out.printf("%d %d %c\n", i, j, num);
-                    if(solve(board, nextI, nextJ, h, v, s))
-                        return true;
-                    h.get(i).remove(num);
-                    v.get(j).remove(num);
-                    s.get(sIndex).remove(num);
+            int possible = h[i] & v[j] & s[sIndex];
+            while(possible != 0){
+                int validBit = possible & (0 - possible);
+                possible ^= validBit;
+                h[i] ^= validBit;
+                v[j] ^= validBit;
+                s[sIndex] ^= validBit;
+                if(solve(board, nextI, nextJ, h, v, s)){
+                    for(int num = 1; num <= 9; num++){
+                        if ((validBit ^ (1 << num)) == 0){
+                            board[i][j] = (char)(num + '0');
+                            break;
+                        }
+                    }
+                    return true;
                 }
+                h[i] |= validBit;
+                v[j] |= validBit;
+                s[sIndex] |= validBit;
             }
-            board[i][j] = '.';
             return false;
         }
     }

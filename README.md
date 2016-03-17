@@ -25,6 +25,9 @@ hmm...
 * InterleavingString
     * BFS
 * ReadNCharactersGivenRead4II
+* LargestNumber
+    * sort
+* BasicCalculatorII
 
 ## Array
 
@@ -75,6 +78,8 @@ hmm...
 * SearchForARange
 * Candy
     * two array
+* Majority ElementII
+* ReverseWordsInAStringII
 
 ## LinkedList
 
